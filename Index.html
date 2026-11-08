@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Charishma 🪔</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;padding:20px;
+ display:flex;align-items:center;justify-content:center;
+ background:radial-gradient(circle,#653b78,#160d2c);
+ color:white;font-family:Georgia,serif;text-align:center;
+ overflow-x:hidden;
+}
+.card{
+ width:100%;max-width:420px;padding:30px 20px;
+ border:1px solid #ffd58c;border-radius:25px;
+ background:#ffffff13;
+ box-shadow:0 0 40px #ffb6e455;
+}
+.diya{font-size:75px;animation:glow 1.5s infinite alternate}
+@keyframes glow{
+ from{filter:drop-shadow(0 0 5px orange)}
+ to{filter:drop-shadow(0 0 25px gold)}
+}
+h1{color:#ffdf9d;font-size:36px}
+p{line-height:1.9;color:#ffe5f5}
+button{
+ border:0;border-radius:30px;padding:13px 22px;
+ margin:10px;background:linear-gradient(45deg,#ffaad7,#ffe5a0);
+ color:#452344;font-weight:bold;font-size:15px;
+}
+#letter{
+ display:none;margin-top:20px;padding:18px;
+ border:1px solid #ffd5eb;border-radius:18px;
+ background:#ffffff12;line-height:1.8;
+}
+#letter h2{color:#ffcfeb}
+.star{
+ position:fixed;color:#ffe4a0;
+ animation:twinkle 2s infinite alternate;
+ pointer-events:none;
+}
+@keyframes twinkle{to{opacity:.2;transform:scale(.5)}}
+.fall{
+ position:fixed;top:-30px;pointer-events:none;
+ animation:fall 4s linear forwards;
+}
+@keyframes fall{to{transform:translateY(110vh) rotate(400deg);opacity:0}}
+.footer{font-size:12px;color:#eac9ef;margin-top:25px}
+</style>
+</head>
+<body>
+
+<div class="card">
+ <div style="letter-spacing:4px;font-size:11px">
+ A LITTLE GIFT FROM ABHI
+ </div>
+
+ <div class="diya">🪔</div>
+
+ <h1>Happy Diwali!</h1>
+
+ <p>
+ Hey Charishma! 🌸<br>
+ Someone has a little surprise for you...
+ </p>
+
+ <div style="font-size:35px">🦋 ✨ 🌷</div>
+
+ <button onclick="openLetter()">
+ Open your surprise 💌
+ </button>
+
+ <div id="letter">
+  <h2>Dear Charishma 💗</h2>
+
+  <p>
+  Some people make ordinary days
+  a little more beautiful just by
+  being themselves.
+  </p>
+
+  <p>
+  I'm glad to have a friend like you.
+  May your life always be filled with
+  happiness, laughter, silly moments
+  and beautiful memories.
+  </p>
+
+  <p>
+  May every diya bring a new reason
+  to smile into your life. ✨
+  </p>
+
+  <h3 style="color:#ffdf9d">
+  Keep smiling and keep shining! 🌸
+  </h3>
+
+  <div style="font-size:35px">🪔💗🦋</div>
+  <p>With friendship,</p>
+  <h2>— Abhi ❤️</h2>
+ </div>
+
+ <button onclick="makeWish()">
+ Make a wish! 🎆
+ </button>
+
+ <p id="wish" style="display:none">
+ ✨ May all your beautiful wishes come true! ✨
+ </p>
+
+ <div class="footer">
+ Made with friendship & a little magic
+ <br><br>DIWALI 2026
+ </div>
+</div>
+
+<script>
+for(let i=0;i<45;i++){
+ let s=document.createElement("span");
+ s.className="star";
+ s.innerHTML="✦";
+ s.style.left=Math.random()*100+"%";
+ s.style.top=Math.random()*100+"%";
+ s.style.fontSize=(8+Math.random()*15)+"px";
+ document.body.appendChild(s);
+}
+
+function shower(){
+ let symbols=["🌸","💗","✨","🦋","🌼"];
+ for(let i=0;i<25;i++){
+  let x=document.createElement("span");
+  x.className="fall";
+  x.innerHTML=symbols[Math.floor(Math.random()*symbols.length)];
+  x.style.left=Math.random()*100+"%";
+  document.body.appendChild(x);
+  setTimeout(()=>x.remove(),4000);
+ }
+}
+
+function openLetter(){
+ document.getElementById("letter").style.display="block";
+ shower();
+}
+
+function makeWish(){
+ document.getElementById("wish").style.display="block";
+ shower();
+}
+</script>
+</body>
+</html>
